@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
+
+    const {googleLogin}=useAuth();
+    const handleGoogleLogin=()=>{
+        googleLogin();
+    }
   return (
     <div>
       <div>
@@ -51,7 +57,7 @@ const Login = () => {
                 </div>
                 <div className="form-control mt-6 gap-5">
                   <button className="btn text-white bg-red-600">Login</button>
-                  <button className="btn bg-blue-600 text-white">Google</button>
+                  <button onClick={handleGoogleLogin} className="btn bg-blue-600 text-white">Google</button>
                 </div>
               </form>
             </div>
