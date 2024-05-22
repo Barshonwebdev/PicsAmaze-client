@@ -49,8 +49,9 @@ const Login = () => {
                     </a>
                   </label>
                 </div>
-                <div className="form-control mt-6">
+                <div className="form-control mt-6 gap-5">
                   <button className="btn text-white bg-red-600">Login</button>
+                  <button className="btn text-blue-600 bg-base-300">Google</button>
                 </div>
               </form>
             </div>
