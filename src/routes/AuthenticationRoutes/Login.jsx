@@ -3,14 +3,14 @@ import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
 
-    const {googleLogin}=useAuth();
+    const {googleLogin,user}=useAuth();
     const handleGoogleLogin=()=>{
         googleLogin();
     }
   return (
     <div>
       <div>
-        <p>login</p>
+        <p>logged in user: {user.email} </p>
         <Link to={"/"}>
           <button className="btn ml-2 bg-red-700 text-white">Home</button>
         </Link>
