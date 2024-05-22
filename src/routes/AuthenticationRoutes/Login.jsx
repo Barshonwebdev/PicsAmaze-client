@@ -51,7 +51,7 @@ const Login = () => {
                 </div>
                 <div className="form-control mt-6 gap-5">
                   <button className="btn text-white bg-red-600">Login</button>
-                  <button className="btn text-blue-600 bg-base-300">Google</button>
+                  <button className="btn bg-blue-600 text-white">Google</button>
                 </div>
               </form>
             </div>
