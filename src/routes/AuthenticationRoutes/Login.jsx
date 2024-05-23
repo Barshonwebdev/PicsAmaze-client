@@ -23,11 +23,11 @@ const Login = () => {
 
       <div>
         <div className="hero min-h-screen">
-          <div className="hero-content flex-col lg:flex-row-reverse">
-            <div className="text-center lg:text-left px-5">
+          <div className="hero-content flex-col lg:space-x-12 lg:flex-row-reverse">
+            <div className="text-center lg:text-left px-5 lg:ml-10">
               <h1 className="text-5xl font-bold">Login at PicsAmaze!</h1>
-              <p className="py-6 md:mr-32 ">
-                Get your photos ready! picsAmaze lets you embark on a journey full of ideas expressed with photography and images. Login to further proceed and open the doors to ideas across the globe!
+              <p className="py-6 lg:mr-52 ">
+                Get your photos ready! picsAmaze lets you embark on a journey full of ideas expressed with photography and images!!
               </p>
             </div>
             <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
