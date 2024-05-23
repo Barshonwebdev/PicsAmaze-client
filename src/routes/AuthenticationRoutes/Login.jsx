@@ -4,30 +4,32 @@ import { FcGoogle } from "react-icons/fc";
 import { CiFacebook } from "react-icons/ci";
 
 const Login = () => {
-  const { googleLogin, user, userLogout, facebookLogin,signIn } = useAuth();
+  const { googleLogin, user, userLogout, facebookLogin, signIn } = useAuth();
 
-  const handleSignin=(e)=>{
+  const handleSignin = (e) => {
     e.preventDefault();
-    const form=e.target;
-    const email=form.email.value;
-    const pass=form.password.value;
-    signIn(email,pass)
-    .then(()=>{
+    const form = e.target;
+    const email = form.email.value;
+    const pass = form.password.value;
+    signIn(email, pass).then(() => {
       e.target.reset();
-    })
-  }
+    });
+  };
   const handleGoogleLogin = () => {
     googleLogin();
   };
   const handleFacebookLogin = () => {
     facebookLogin();
   };
+  const handleForgetPass=()=>{
+    
+  }
   const handleLogout = () => {
     userLogout();
   };
   return (
     <div>
-      <div>
+      <div className="invisible">
         <p>logged in user: {user.email} </p>
         <Link to={"/"}>
           <button className="btn ml-2 bg-red-700 text-white">Home</button>
@@ -76,10 +78,28 @@ const Login = () => {
                     required
                   />
                   <label className="label">
-                    <a href="#" className="label-text-alt link link-hover">
-                      Forgot password?
-                    </a>
+                    <a href="#forgot" className="text-xs font-bold">Forgot password?</a>
                   </label>
+                  <div>
+                    {/* modal  */}
+                    <div className="modal" role="dialog" id="forgot">
+                      <div className="modal-box">
+                        <h3 className="font-bold text-lg mb-3">Provide your email</h3>
+                        <label className="py-4">
+                          Enter your email here and we will send you a password reset link!
+                        </label>
+                        <form onSubmit={handleForgetPass} className="my-4">
+                          <label>Email: </label>
+                          <input type="email" name="email" id="" className="border-2 border-gray-400 rounded-md focus:outline-none pl-2" />
+                        </form>
+                        <div className="modal-action">
+                          <button className="btn hover:text-white hover:bg-red-800 bg-red-600 text-white">
+                            Send me link!
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div className="form-control mt-6 gap-2">
                   <button className="btn hover:bg-red-800 text-white bg-red-600">
@@ -106,7 +126,7 @@ const Login = () => {
                     Policy.
                   </small>
                   <hr className="w-36 mx-auto" />
-                  <Link to='/register' className="mx-auto">
+                  <Link to="/register" className="mx-auto">
                     <p className=" text-sm font-semibold">
                       Not yet on PicsAmaze? Sign up!
                     </p>

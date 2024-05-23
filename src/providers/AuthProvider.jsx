@@ -24,6 +24,8 @@ const AuthProvider = ({children}) => {
             console.log(userInfo);
         })
     }
+
+    
     const googleLogin=()=>{
         return signInWithPopup(auth,googleProvider).then((result)=>{
             const info=result.user;
