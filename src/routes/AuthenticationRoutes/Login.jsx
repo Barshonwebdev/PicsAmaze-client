@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import { FcGoogle } from "react-icons/fc";
+import { CiFacebook } from "react-icons/ci";
 
 const Login = () => {
 
-    const {googleLogin,user,userLogout}=useAuth();
+    const {googleLogin,user,userLogout,facebookLogin}=useAuth();
     const handleGoogleLogin=()=>{
         googleLogin();
+    }
+    const handleFacebookLogin=()=>{
+      facebookLogin();
     }
     const handleLogout=()=>{
         userLogout();
@@ -63,6 +67,7 @@ const Login = () => {
                   <button className="btn hover:bg-red-800 text-white bg-red-600">Login</button>
                   <p className="text-center">Or,</p>
                   <button onClick={handleGoogleLogin} className="btn bg-white text-black hover:bg-base-300"><FcGoogle className="text-xl"></FcGoogle> Continue with Google</button>
+                  <button onClick={handleFacebookLogin} className="btn bg-blue-500 text-white hover:bg-blue-700"><CiFacebook className="text-xl"></CiFacebook> Continue with Facebook</button>
                   <small className="text-center">By continuing, you agree to PicsAmaze&apos;s Terms of Service; and acknowledge you&apos;ve read our Privacy Policy.</small>
                 </div>
               </form>
