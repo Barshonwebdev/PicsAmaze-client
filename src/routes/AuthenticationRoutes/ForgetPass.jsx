@@ -1,7 +1,20 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 const ForgetPass = () => {
-  const handleForgetPass = () => {};
+  const [confirmMsg,setConfirmMsg]=useState(false);
+  const {forgetPass}=useAuth();
+  const handleForgetPass = (e) => {
+    e.preventDefault();
+    const form=e.target;
+    const email=form.email.value;
+    forgetPass(email)
+    .then(()=>{
+        setConfirmMsg(true);
+        e.reset();
+    })
+  };
   return (
     <div className="">
       <div className="mt-10 flex justify-center ">
@@ -16,10 +29,14 @@ const ForgetPass = () => {
             type="email"
             name="email"
             id=""
-            className="border-2 border-gray-400 rounded-md focus:outline-none pl-2"
+            className="border-2 w-1/2 border-gray-400 rounded-md focus:outline-none pl-2"
           />
-        </form>
-        <div className="flex justify-between mt-5" >
+          <div>
+            {
+                confirmMsg&& <p className="text-green-600 my-2">Email sent for password reset!</p>
+            }
+        </div>
+         <div className="flex justify-between mt-5" >
           <Link to='/login'>
           <button className="btn btn-primary">
             Back to login
@@ -30,6 +47,9 @@ const ForgetPass = () => {
           </button>
           
         </div>
+        </form>
+        
+       
         </div>
       </div>
     </div>

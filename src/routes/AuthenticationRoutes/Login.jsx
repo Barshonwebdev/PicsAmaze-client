@@ -21,13 +21,12 @@ const Login = () => {
   const handleFacebookLogin = () => {
     facebookLogin();
   };
-  const handleForgetPass = () => {};
   const handleLogout = () => {
     userLogout();
   };
   return (
     <div>
-      <div className="invisible">
+      <div >
         <p>logged in user: {user.email} </p>
         <Link to={"/"}>
           <button className="btn ml-2 bg-red-700 text-white">Home</button>
