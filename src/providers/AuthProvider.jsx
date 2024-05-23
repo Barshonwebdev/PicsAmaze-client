@@ -1,4 +1,4 @@
-import { FacebookAuthProvider, GoogleAuthProvider, getAuth, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
+import { FacebookAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { app } from "../firebase/firebase.config";
 export const AuthContext=createContext('null');
@@ -8,6 +8,14 @@ const AuthProvider = ({children}) => {
 
     const googleProvider= new GoogleAuthProvider();
     const facebookProvider= new FacebookAuthProvider();
+
+    const createUser=(email,password)=>{
+        return createUserWithEmailAndPassword(auth,email,password)
+        .then((result)=>{
+            const userInfo=result.user;
+            console.log(userInfo);
+        })
+    }
     const googleLogin=()=>{
         return signInWithPopup(auth,googleProvider).then((result)=>{
             const info=result.user;
@@ -39,7 +47,7 @@ const AuthProvider = ({children}) => {
             return unsubscribe();
         }
     },[])
-    const authInfo={googleLogin,user,userLogout,facebookLogin}
+    const authInfo={googleLogin,user,userLogout,facebookLogin,createUser}
     return (
         <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
     );

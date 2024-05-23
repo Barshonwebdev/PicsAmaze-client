@@ -1,6 +1,19 @@
 import { Link } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 const Register = () => {
+    const {createUser}=useAuth();
+    const handleSignup=(e)=>{
+        e.preventDefault();
+        const form=e.target;
+        const name=form.name.value;
+        const email=form.email.value;
+        const pass=form.password.value;
+        createUser(email,pass)
+        .then(()=>{
+            e.target.reset();
+        })
+    }
     return (
         <div>
         <div>
@@ -20,7 +33,7 @@ const Register = () => {
                 </p>
               </div>
               <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                <form className="card-body">
+                <form onSubmit={handleSignup} className="card-body">
                 <div className="form-control">
                     <label className="label">
                       <span className="label-text">Name</span>
@@ -28,6 +41,7 @@ const Register = () => {
                     <input
                       type="text"
                       placeholder="name"
+                      name="name"
                       className="input input-bordered"
                       required
                     />
@@ -37,6 +51,7 @@ const Register = () => {
                       <span className="label-text">Email</span>
                     </label>
                     <input
+                    name="email"
                       type="email"
                       placeholder="email"
                       className="input input-bordered"
@@ -49,13 +64,14 @@ const Register = () => {
                     </label>
                     <input
                       type="password"
+                      name="password"
                       placeholder="password"
                       className="input input-bordered"
                       required
                     />
                     
                   </div>
-                  <button className="btn mt-3 hover:bg-red-800 text-white bg-red-600">
+                  <button type="submit" className="btn mt-3 hover:bg-red-800 text-white bg-red-600">
                     Sign up
                   </button>
                   <Link to='/login' className="mx-auto mt-5">
