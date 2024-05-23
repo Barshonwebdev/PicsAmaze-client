@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
 
@@ -14,6 +15,7 @@ const Login = () => {
         <Link to={"/"}>
           <button className="btn ml-2 bg-red-700 text-white">Home</button>
         </Link>
+        <button className="btn ml-2 bg-red-700 text-white">Logout</button>
       </div>
 
       <div>
@@ -54,9 +56,11 @@ const Login = () => {
                     </a>
                   </label>
                 </div>
-                <div className="form-control mt-6 gap-5">
-                  <button className="btn text-white bg-red-600">Login</button>
-                  <button onClick={handleGoogleLogin} className="btn bg-blue-600 text-white">Google</button>
+                <div className="form-control mt-6 gap-2">
+                  <button className="btn hover:bg-red-800 text-white bg-red-600">Login</button>
+                  <p className="text-center">Or,</p>
+                  <button onClick={handleGoogleLogin} className="btn bg-white text-black hover:bg-base-300"><FcGoogle className="text-xl"></FcGoogle> Continue with Google</button>
+                  <small className="text-center">By continuing, you agree to PicsAmaze&apos;s Terms of Service; and acknowledge you&apos;ve read our Privacy Policy.</small>
                 </div>
               </form>
             </div>
