@@ -4,9 +4,12 @@ import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
 
-    const {googleLogin,user}=useAuth();
+    const {googleLogin,user,userLogout}=useAuth();
     const handleGoogleLogin=()=>{
         googleLogin();
+    }
+    const handleLogout=()=>{
+        userLogout();
     }
   return (
     <div>
@@ -15,7 +18,7 @@ const Login = () => {
         <Link to={"/"}>
           <button className="btn ml-2 bg-red-700 text-white">Home</button>
         </Link>
-        <button className="btn ml-2 bg-red-700 text-white">Logout</button>
+        <button onClick={handleLogout} className="btn ml-2 bg-red-700 text-white">Logout</button>
       </div>
 
       <div>
