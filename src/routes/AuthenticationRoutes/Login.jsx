@@ -4,17 +4,16 @@ import { FcGoogle } from "react-icons/fc";
 import { CiFacebook } from "react-icons/ci";
 
 const Login = () => {
-
-    const {googleLogin,user,userLogout,facebookLogin}=useAuth();
-    const handleGoogleLogin=()=>{
-        googleLogin();
-    }
-    const handleFacebookLogin=()=>{
-      facebookLogin();
-    }
-    const handleLogout=()=>{
-        userLogout();
-    }
+  const { googleLogin, user, userLogout, facebookLogin } = useAuth();
+  const handleGoogleLogin = () => {
+    googleLogin();
+  };
+  const handleFacebookLogin = () => {
+    facebookLogin();
+  };
+  const handleLogout = () => {
+    userLogout();
+  };
   return (
     <div>
       <div>
@@ -22,7 +21,12 @@ const Login = () => {
         <Link to={"/"}>
           <button className="btn ml-2 bg-red-700 text-white">Home</button>
         </Link>
-        <button onClick={handleLogout} className="btn ml-2 bg-red-700 text-white">Logout</button>
+        <button
+          onClick={handleLogout}
+          className="btn ml-2 bg-red-700 text-white"
+        >
+          Logout
+        </button>
       </div>
 
       <div>
@@ -31,7 +35,8 @@ const Login = () => {
             <div className="text-center lg:text-left px-5 lg:ml-10">
               <h1 className="text-5xl font-bold">Login at PicsAmaze!</h1>
               <p className="py-6 lg:mr-52 ">
-                Get your photos ready! picsAmaze lets you embark on a journey full of ideas expressed with photography and images!!
+                Get your photos ready! picsAmaze lets you embark on a journey
+                full of ideas expressed with photography and images!!
               </p>
             </div>
             <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -64,11 +69,35 @@ const Login = () => {
                   </label>
                 </div>
                 <div className="form-control mt-6 gap-2">
-                  <button className="btn hover:bg-red-800 text-white bg-red-600">Login</button>
+                  <button className="btn hover:bg-red-800 text-white bg-red-600">
+                    Login
+                  </button>
                   <p className="text-center">Or,</p>
-                  <button onClick={handleGoogleLogin} className="btn bg-white text-black hover:bg-base-300"><FcGoogle className="text-xl"></FcGoogle> Continue with Google</button>
-                  <button onClick={handleFacebookLogin} className="btn bg-blue-500 text-white hover:bg-blue-700"><CiFacebook className="text-xl"></CiFacebook> Continue with Facebook</button>
-                  <small className="text-center">By continuing, you agree to PicsAmaze&apos;s Terms of Service; and acknowledge you&apos;ve read our Privacy Policy.</small>
+                  <button
+                    onClick={handleGoogleLogin}
+                    className="btn bg-white text-black hover:bg-base-300"
+                  >
+                    <FcGoogle className="text-xl"></FcGoogle> Continue with
+                    Google
+                  </button>
+                  <button
+                    onClick={handleFacebookLogin}
+                    className="btn bg-blue-500 text-white hover:bg-blue-700"
+                  >
+                    <CiFacebook className="text-xl"></CiFacebook> Continue with
+                    Facebook
+                  </button>
+                  <small className="text-center">
+                    By continuing, you agree to PicsAmaze&apos;s Terms of
+                    Service; and acknowledge you&apos;ve read our Privacy
+                    Policy.
+                  </small>
+                  <hr className="w-36 mx-auto" />
+                  <Link to='/register' className="mx-auto">
+                    <p className=" text-sm font-semibold">
+                      Not yet on PicsAmaze? Sign up!
+                    </p>
+                  </Link>
                 </div>
               </form>
             </div>
