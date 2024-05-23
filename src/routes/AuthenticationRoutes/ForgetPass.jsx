@@ -19,7 +19,7 @@ const ForgetPass = () => {
             className="border-2 border-gray-400 rounded-md focus:outline-none pl-2"
           />
         </form>
-        <div className="flex justify-between" >
+        <div className="flex justify-between mt-5" >
           <Link to='/login'>
           <button className="btn btn-primary">
             Back to login
