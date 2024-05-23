@@ -21,9 +21,7 @@ const Login = () => {
   const handleFacebookLogin = () => {
     facebookLogin();
   };
-  const handleForgetPass=()=>{
-    
-  }
+  // const handleForgetPass = () => {};
   const handleLogout = () => {
     userLogout();
   };
@@ -78,28 +76,11 @@ const Login = () => {
                     required
                   />
                   <label className="label">
-                    <a href="#forgot" className="text-xs font-bold">Forgot password?</a>
+                    <Link  className="text-xs font-bold">
+                      Forgot password?
+                    </Link>
                   </label>
-                  <div>
-                    {/* modal  */}
-                    <div className="modal" role="dialog" id="forgot">
-                      <div className="modal-box">
-                        <h3 className="font-bold text-lg mb-3">Provide your email</h3>
-                        <label className="py-4">
-                          Enter your email here and we will send you a password reset link!
-                        </label>
-                        <form onSubmit={handleForgetPass} className="my-4">
-                          <label>Email: </label>
-                          <input type="email" name="email" id="" className="border-2 border-gray-400 rounded-md focus:outline-none pl-2" />
-                        </form>
-                        <div className="modal-action">
-                          <button className="btn hover:text-white hover:bg-red-800 bg-red-600 text-white">
-                            Send me link!
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                 
                 </div>
                 <div className="form-control mt-6 gap-2">
                   <button className="btn hover:bg-red-800 text-white bg-red-600">
