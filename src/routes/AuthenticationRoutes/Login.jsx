@@ -21,7 +21,7 @@ const Login = () => {
   const handleFacebookLogin = () => {
     facebookLogin();
   };
-  // const handleForgetPass = () => {};
+  const handleForgetPass = () => {};
   const handleLogout = () => {
     userLogout();
   };
@@ -76,11 +76,12 @@ const Login = () => {
                     required
                   />
                   <label className="label">
-                    <Link  className="text-xs font-bold">
+                    <Link to="/forget" className="text-xs font-bold">
                       Forgot password?
                     </Link>
                   </label>
-                 
+                  <div>                    
+                  </div>
                 </div>
                 <div className="form-control mt-6 gap-2">
                   <button className="btn hover:bg-red-800 text-white bg-red-600">

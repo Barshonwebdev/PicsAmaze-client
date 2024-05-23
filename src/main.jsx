@@ -10,6 +10,7 @@ import Home from './routes/Homepage/Home';
 import Login from './routes/AuthenticationRoutes/Login';
 import Register from './routes/AuthenticationRoutes/Register';
 import AuthProvider from './providers/AuthProvider';
+import ForgetPass from './routes/AuthenticationRoutes/ForgetPass';
 
 const router= createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router= createBrowserRouter([
   {
     path:'/register',
     element:<Register></Register>
+  },
+  {
+    path:'/forget',
+    element:<ForgetPass></ForgetPass>
   }
 
 ])
