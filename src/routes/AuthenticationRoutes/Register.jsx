@@ -71,7 +71,7 @@ const Register = () => {
                     />
                     
                   </div>
-                  <button type="submit" className="btn mt-3 hover:bg-red-800 text-white bg-red-600">
+                  <button className="btn mt-3 hover:bg-red-800 text-white bg-red-600">
                     Sign up
                   </button>
                   <Link to='/login' className="mx-auto mt-5">
