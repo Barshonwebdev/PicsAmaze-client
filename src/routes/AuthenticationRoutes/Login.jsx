@@ -24,23 +24,9 @@ const Login = () => {
     facebookLogin();
     navigate('/');
   };
-  const handleLogout = () => {
-    userLogout();
-  };
   return (
     <div>
-      <div >
-        <p>logged in user: {user.email} </p>
-        <Link to={"/"}>
-          <button className="btn ml-2 bg-red-700 text-white">Home</button>
-        </Link>
-        <button
-          onClick={handleLogout}
-          className="btn ml-2 bg-red-700 text-white"
-        >
-          Logout
-        </button>
-      </div>
+
 
       <div>
         <div className="hero ">
