@@ -1,18 +1,30 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import { useState } from "react";
 
 const Register = () => {
     const {createUser}=useAuth();
+    const [confirm,setConfirm]=useState(true);
     const handleSignup=(e)=>{
         e.preventDefault();
         const form=e.target;
         const name=form.name.value;
         const email=form.email.value;
         const pass=form.password.value;
-        createUser(email,pass)
+        const confirmPass=form.confirmPassword.value;
+        if(pass!==confirmPass){
+          setConfirm(false);
+          alert('Write your password again correctly');
+          e.target.reset();
+        }
+
+        if(pass===confirmPass){
+          createUser(email,pass)
         .then(()=>{
             e.target.reset();
         })
+        }
+        
     }
     return (
         <div>
@@ -66,6 +78,19 @@ const Register = () => {
                       type="password"
                       name="password"
                       placeholder="password"
+                      className="input input-bordered"
+                      required
+                    />
+                    
+                  </div>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Confirm Password</span>
+                    </label>
+                    <input
+                      type="password"
+                      name="confirmPassword"
+                      placeholder="confirm your password"
                       className="input input-bordered"
                       required
                     />
