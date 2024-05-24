@@ -1,9 +1,8 @@
-import { useState } from "react";
 import useAuth from "../../hooks/useAuth";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const { user, userLogout } = useAuth();
-  const [userState,setUserState]=useState(null);
   const handleLogout = () => {
     userLogout();
   };
@@ -15,12 +14,21 @@ const Header = () => {
         }
 
         <div>
-        <button
-          onClick={handleLogout}
-          className="btn mt-2 ml-2 bg-red-700 text-white"
-        >
-          Logout
-        </button>
+        {
+            user.email? <button
+            onClick={handleLogout}
+            className="btn mt-2 ml-2 bg-red-700 text-white"
+          >
+            Logout
+          </button> :
+         <Link to='/login'>
+         <button
+          
+            className="btn mt-2 ml-2 bg-red-700 text-white"
+          >
+            Login
+          </button></Link>
+        }
         </div>
       </div>
     </div>
