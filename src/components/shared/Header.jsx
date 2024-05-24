@@ -8,10 +8,12 @@ const Header = () => {
   };
   return (
     <div className="flex justify-between mt-3 px-4">
-      <div className="p-2 flex items-center space-x-2">
+        <Link to='/'>
+        <div className="p-2 flex items-center space-x-2">
         <img className="w-10" src="/src/assets/Pinterest_idTCNAlH1L_4.png" alt="" />
         <p className="font text-red-700 text-3xl">PicsAmaze</p>
-      </div>
+        </div>
+        </Link>
       <div className="lg:mr-5 flex flex-col items-center">
         {
             user.email&&<p>logged in as: {user.email} </p>
