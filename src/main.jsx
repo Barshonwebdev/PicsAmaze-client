@@ -11,6 +11,7 @@ import Login from './routes/AuthenticationRoutes/Login';
 import Register from './routes/AuthenticationRoutes/Register';
 import AuthProvider from './providers/AuthProvider';
 import ForgetPass from './routes/AuthenticationRoutes/ForgetPass';
+import ExplorePage from './routes/Explore/ExplorePage';
 
 const router= createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router= createBrowserRouter([
       {
         path:'/',
         element: <Home></Home>
+      },
+      {
+        path:'/explore',
+        element:<ExplorePage></ExplorePage>
       }
     ]
   },
