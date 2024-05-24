@@ -7,7 +7,7 @@ const Header = () => {
     userLogout();
   };
   return (
-    <div className="flex justify-between mt-3 px-4">
+    <div className="flex justify-between mt-3 lg:px-4">
       <Link to="/">
         <div className="p-2 flex items-center space-x-2">
           <img
