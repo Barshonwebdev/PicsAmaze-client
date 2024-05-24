@@ -12,6 +12,7 @@ import Register from './routes/AuthenticationRoutes/Register';
 import AuthProvider from './providers/AuthProvider';
 import ForgetPass from './routes/AuthenticationRoutes/ForgetPass';
 import ExplorePage from './routes/Explore/ExplorePage';
+import PrivateRoute from './routes/PrivateRoute/PrivateRoute';
 
 const router= createBrowserRouter([
   {
@@ -24,7 +25,7 @@ const router= createBrowserRouter([
       },
       {
         path:'/explore',
-        element:<ExplorePage></ExplorePage>
+        element:<PrivateRoute><ExplorePage></ExplorePage></PrivateRoute>
       }
     ]
   },
