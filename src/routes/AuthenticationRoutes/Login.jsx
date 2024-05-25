@@ -17,12 +17,18 @@ const Login = () => {
     });
   };
   const handleGoogleLogin = () => {
-    googleLogin();
-    navigate('/');
+    googleLogin()
+    .then(()=>{
+      navigate('/');
+    })
+    
   };
   const handleFacebookLogin = () => {
-    facebookLogin();
-    navigate('/');
+    facebookLogin()
+    .then(()=>{
+      navigate('/');
+    })
+    
   };
   return (
     <div>
