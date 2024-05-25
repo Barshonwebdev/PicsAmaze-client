@@ -1,10 +1,12 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
 
 const Register = () => {
-    const {createUser}=useAuth();
+    const {createUser,user}=useAuth();
     const navigate=useNavigate();
+    const location=useLocation();
+    const from=location?.state?.from?.pathname || '/';
     const [confirm,setConfirm]=useState(true);
     const handleSignup=(e)=>{
         e.preventDefault();
@@ -23,7 +25,9 @@ const Register = () => {
           createUser(email,pass)
         .then(()=>{
             e.target.reset();
-            navigate('/');
+            if(user){
+              navigate(from)
+            }
         })
         }
         

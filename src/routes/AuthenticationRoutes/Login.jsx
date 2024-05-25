@@ -1,11 +1,13 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import { FcGoogle } from "react-icons/fc";
 import { CiFacebook } from "react-icons/ci";
 
 const Login = () => {
-  const { googleLogin, user, userLogout, facebookLogin, signIn } = useAuth();
+  const { googleLogin, user, facebookLogin, signIn } = useAuth();
   const navigate=useNavigate();
+  const location=useLocation();
+  const from=location?.state?.from?.pathname || '/';
   const handleSignin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -13,20 +15,22 @@ const Login = () => {
     const pass = form.password.value;
     signIn(email, pass).then(() => {
       e.target.reset();
-      navigate('/');
+      if(user){
+        navigate(from);
+      }
     });
   };
   const handleGoogleLogin = () => {
     googleLogin()
     .then(()=>{
-      navigate('/');
+      navigate(from);
     })
     
   };
   const handleFacebookLogin = () => {
     facebookLogin()
     .then(()=>{
-      navigate('/');
+      navigate(from);
     })
     
   };
