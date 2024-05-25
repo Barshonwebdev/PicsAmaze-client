@@ -13,6 +13,7 @@ import AuthProvider from './providers/AuthProvider';
 import ForgetPass from './routes/AuthenticationRoutes/ForgetPass';
 import ExplorePage from './routes/Explore/ExplorePage';
 import PrivateRoute from './routes/PrivateRoute/PrivateRoute';
+import DashboardHome from './routes/Dashboard/DashboardHome';
 
 const router= createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router= createBrowserRouter([
   {
     path:'/forget',
     element:<ForgetPass></ForgetPass>
+  },
+  {
+    path:'/dashboard',
+    element:<PrivateRoute><DashboardHome></DashboardHome></PrivateRoute>
   }
 
 ])
