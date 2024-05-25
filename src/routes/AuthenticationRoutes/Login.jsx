@@ -39,7 +39,7 @@ const Login = () => {
 
 
       <div>
-        <div className="hero ">
+        <div className="hero lg:mt-8 ">
           <div className="hero-content flex-col lg:space-x-28 lg:flex-row-reverse">
             <div className="text-center lg:text-left px-5 lg:ml-10">
               <h1 className="text-5xl font-bold">Login at PicsAmaze!</h1>

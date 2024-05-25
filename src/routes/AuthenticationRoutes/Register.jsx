@@ -34,12 +34,7 @@ const Register = () => {
     }
     return (
         <div>
-        <div>
-          <Link to={"/"}>
-            <button className="btn ml-2 bg-red-700 text-white">Home</button>
-          </Link>
-          
-        </div>
+       
   
         <div>
           <div className="hero min-h-screen">
